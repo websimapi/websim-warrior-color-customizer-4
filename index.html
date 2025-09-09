@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warrior Color Customizer</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <div id="canvas-container">
+            <canvas id="main-canvas"></canvas>
+        </div>
+        <div id="controls">
+            <h1>Warrior Customizer</h1>
+            <p>Change the colors of the warrior's gear. Each control targets a specific color channel from the original image.</p>
+            <div class="slider-control" style="display: none;">
+                <label for="threshold-slider">Color Match Leniency</label>
+                <input type="range" id="threshold-slider" min="0.0" max="1.0" step="0.01" value="1.0">
+                <span id="threshold-value">1.00</span>
+            </div>
+            <div class="color-control">
+                <label for="color-face">Face/Skin</label>
+                <div class="input-group">
+                    <input type="color" id="color-face" value="#FFFF00">
+                    <input type="range" class="threshold-slider" id="threshold-face" min="0.0" max="1.0" step="0.01" value="1.0">
+                    <span class="threshold-value" id="threshold-value-face">1.00</span>
+                </div>
+            </div>
+            <div class="color-control">
+                <label for="color-armour">Armour/Weapon</label>
+                <div class="input-group">
+                    <input type="color" id="color-armour" value="#0000FF">
+                    <input type="range" class="threshold-slider" id="threshold-armour" min="0.0" max="1.0" step="0.01" value="1.0">
+                    <span class="threshold-value" id="threshold-value-armour">1.00</span>
+                </div>
+            </div>
+            <div class="color-control">
+                <label for="color-trim">Trim</label>
+                <div class="input-group">
+                    <input type="color" id="color-trim" value="#00FF00">
+                    <input type="range" class="threshold-slider" id="threshold-trim" min="0.0" max="1.0" step="0.01" value="1.0">
+                    <span class="threshold-value" id="threshold-value-trim">1.00</span>
+                </div>
+            </div>
+            <div class="color-control">
+                <label for="color-hair">Hair</label>
+                <div class="input-group">
+                    <input type="color" id="color-hair" value="#FF0000">
+                    <input type="range" class="threshold-slider" id="threshold-hair" min="0.0" max="1.0" step="0.01" value="1.0">
+                    <span class="threshold-value" id="threshold-value-hair">1.00</span>
+                </div>
+            </div>
+            <div class="color-control">
+                <label for="color-outline">Outline</label>
+                <div class="input-group">
+                    <input type="color" id="color-outline" value="#000000">
+                    <input type="range" class="threshold-slider" id="threshold-outline" min="0.0" max="1.0" step="0.01" value="1.0">
+                    <span class="threshold-value" id="threshold-value-outline">1.00</span>
+                </div>
+            </div>
+            <div class="toggle-control">
+                <label for="clean-pixels-toggle">Pixel Cleanup</label>
+                <input type="checkbox" id="clean-pixels-toggle" checked>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="main.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
